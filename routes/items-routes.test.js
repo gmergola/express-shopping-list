@@ -17,11 +17,11 @@ afterEach(function () {
 
 /** GET /items - returns `{items: [popsicle, ...]}` */
 
-describe("GET /items", function() {
-  it("Gets a list of items", async function() {
-    const resp = await request(app).get(`/items`);
-
+describe("GET /items", function () {
+  it("Gets a list of items", async function () {
+    const resp = await request(app).get("/items");
+    console.log("BODY IS", resp.body);
     expect(resp.statusCode).toBe(200);
     expect(resp.body).toEqual([{ name: "popsicle", price: 2.45 }]);
-  }
-}
+  });
+});
